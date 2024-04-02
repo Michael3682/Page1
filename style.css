@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --primary: #211333;
+    --secondary: #9046EE;
+    --tertiary: #E3F0FF;
+    --complementary: #000012;
+}
+* {
+    font-family: 'poppins';
+    margin: 0;
+}
+body {
+    overflow: hidden;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px 10px 100px;
+    border-bottom: 1px solid var(--secondary);
+    background-color: var(--primary);
+    & .title {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 5px;
+        & h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+        & h2 {
+            font-size: large;
+            color: var(--tertiary);
+        }
+    }
+    & menu {
+        position: absolute;
+    }
+    & .buttons {
+        display: flex;
+        gap: 2rem;
+
+        & li {
+            font-size: 1.3rem;
+            color: var(--tertiary);
+            list-style: none;
+            cursor: pointer;
+            border-bottom: 1px solid transparent;
+            transition: all .2s;
+            &:hover {
+                border-bottom: 1px solid white;
+            }
+        }
+    }
+}
+.buttons2 {
+    opacity: 0;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 5rem;
+    gap: 5rem;
+    height: 100vh;
+    background-color: #000012;
+    & .content {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        flex-direction: column;
+        z-index: 3;
+        gap: 5rem;
+        & h1 {
+            color: var(--tertiary);
+            width: 40rem;
+            font-size: 3rem;
+        }
+        & h2 {
+            color: var(--tertiary);
+            width: fit-content;
+            font-size: larger;
+        }
+        & button {
+            color: var(--tertiary);
+            font-size: 1.1rem;
+            width: fit-content;
+            height: fit-content;
+            padding: 15px;
+            background-color: var(--secondary);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            &:hover {
+                filter: brightness(0.7);
+            }
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+    & .img {
+        background: url('dj.png') center no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        width: 55%;
+        height: 100%;
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--complementary) 15%, rgba(255, 255, 255, 0) 100%);
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    nav {
+        display: flex;
+        width: 100%;
+        padding: 10px;
+    }
+}
