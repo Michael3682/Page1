@@ -215,7 +215,7 @@ nav {
     }
 
     .main {
-        padding-left: 2rem;
+        padding: 0 2rem 0 2rem;
         gap: 2rem;
         height: 100vh;
 
@@ -223,13 +223,15 @@ nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            position: absolute;
+            position: relative;
             flex-direction: column;
+            text-align: center;
             z-index: 3;
             gap: 5rem;
 
             & h1 {
-                width: 24rem;
+                text-align: left;
+                width: fit-content;
                 font-size: 2rem;
             }
 
