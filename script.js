@@ -1,28 +1,22 @@
-const menu = document.querySelector('.menu')
-const sideBar = document.querySelector('.sidebar')
+const menu = document.querySelector('.icon')
+const sideBar = document.querySelector('.buttons')
 
-menu.hidden = true
+menu.style.display == "none"
 
 window.addEventListener("resize", function () {
-    if (window.matchMedia("(max-width: 425px)").matches) {
+    if (window.matchMedia("(max-width: 424px)").matches) {
         menu.hidden = false
-        sideBar.classList.remove('sidebar')
-        sideBar.classList.add('sidebar2')
+        sideBar.style.display = "none"
     }
-    else if (window.matchMedia("(min-width: 426px)").matches) {
-        menu.hidden = true
-        sideBar.classList.add('sidebar')
-        sideBar.classList.remove('sidebar2')
+    else if (window.matchMedia("(min-width: 425px)").matches) {
+        sideBar.style.display = "flex"
     }
 })
 menu.addEventListener('click', () => {
-    if (sideBar.className.match('sidebar2')) {
-        sideBar.classList.remove('sidebar2')
-        sideBar.classList.add('sidebar')
-
+    if (sideBar.style.display === "flex") {
+        sideBar.style.display = "none"
     }
-    else if (sideBar.className.match('sidebar')) {
-        sideBar.classList.add('sidebar2')
-        sideBar.classList.remove('sidebar')
+    else if (sideBar.style.display === "none") {
+        sideBar.style.display = "flex"
     }
 })
