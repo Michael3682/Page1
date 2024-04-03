@@ -1,14 +1,12 @@
-const menu = document.querySelector('.icon')
+const menu = document.querySelector('#menu-toggle')
 const sideBar = document.querySelector('.buttons')
 
-menu.style.display == "none"
-
 window.addEventListener("resize", function () {
-    if (window.matchMedia("(max-width: 424px)").matches) {
+    if (window.matchMedia("(max-width: 425px)").matches) {
         menu.hidden = false
         sideBar.style.display = "none"
     }
-    else if (window.matchMedia("(min-width: 425px)").matches) {
+    else if (window.matchMedia("(min-width: 450px)").matches) {
         sideBar.style.display = "flex"
     }
 })

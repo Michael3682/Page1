@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,22 @@
     <link href="dist/hamburgers.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav>
         <div class="title">
             <h1>P</h1>
             <h2>PixelPulse</h2>
         </div>
-        <div class="menu">
-            <div class="icon"></div>
-        </div>
-            <ul class="buttons">
-                <li>Home</li>
-                <li>Products</li>
-                <li>About</li>
-            </ul>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+        </label>
+        <ul class="buttons">
+            <li>Home</li>
+            <li>Products</li>
+            <li>About</li>
+        </ul>
     </nav>
     <div class="main">
         <div class="content">
@@ -36,4 +39,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

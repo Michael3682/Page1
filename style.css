@@ -41,6 +41,7 @@ nav {
         }
     }
 
+
     & .buttons {
         display: flex;
         gap: 2rem;
@@ -58,6 +59,60 @@ nav {
             }
         }
     }
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 25px;
+    z-index: 6;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: var(--tertiary);
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: all .7s cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(-145deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+    height: 0;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(145deg);
 }
 
 .buttons2 {
@@ -157,34 +212,7 @@ nav {
         & .title h2 {
             font-size: small;
         }
-        & .menu {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            z-index: 6;
-            right: 4rem;
-        }
-    
-        & .icon,
-        .icon::before,
-        .icon::after {
-            display: flex;
-            background-color: var(--tertiary);
-            position: absolute;
-            height: 4px;
-            width: 30px;
-            border-radius: 2px;
-    
-            &::before {
-                content: '';
-                margin-top: -8px;
-            }
-    
-            &::after {
-                content: '';
-                margin-top: 8px;
-            }
-        }
+
         & .buttons {
             display: flex;
             justify-content: center;
@@ -198,7 +226,7 @@ nav {
             padding: 0;
             height: 100%;
             width: 100%;
-    
+
             & li {
                 font-size: 1.3rem;
                 color: var(--tertiary);
@@ -206,12 +234,16 @@ nav {
                 cursor: pointer;
                 border-bottom: 1px solid transparent;
                 transition: all .2s;
-    
+
                 &:hover {
                     border-bottom: 1px solid white;
                 }
             }
         }
+    }
+
+    .menu-button-container {
+        display: flex;
     }
 
     .main {
@@ -236,6 +268,7 @@ nav {
             }
 
             & h2 {
+                text-align: left;
                 font-size: medium;
                 font-weight: 400;
             }
